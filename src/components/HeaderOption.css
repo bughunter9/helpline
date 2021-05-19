@@ -1,0 +1,39 @@
+.headerOption {
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    color: black;
+    cursor: pointer;
+}
+
+.headerOption:hover{
+    color: red;
+}
+
+/* .headerOption:hover {
+    color: black;
+} */
+
+.headerOption__title {
+    font-size: 22px;
+    color: black;
+    font-weight: 500;
+}
+
+.headerOption__title:hover{
+    color: red;
+}
+
+.headerOption__icon{
+    object-fit: contain;
+    height: 25px !important;
+    width: 25px !important;
+}
+
+@media (max-width: 900px) {
+
+    .headerOption {
+        padding: 15px;
+    }
+}
