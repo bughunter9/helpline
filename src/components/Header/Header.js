@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { ReactComponent as CloseMenu } from "../assets/x.svg";
-import { ReactComponent as MenuIcon } from "../assets/menu.svg";
+import { ReactComponent as CloseMenu } from "../../assets/x.svg";
+import { ReactComponent as MenuIcon } from "../../assets/menu.svg";
 import EqualizerOutlinedIcon from '@material-ui/icons/EqualizerOutlined';
 import DataUsageRoundedIcon from '@material-ui/icons/DataUsageRounded';
 import AddAlertIcon from '@material-ui/icons/AddAlert';
@@ -8,8 +8,8 @@ import AssignmentReturnedIcon from '@material-ui/icons/AssignmentReturned';
 import "./Header.css";
 import HeaderOption from './HeaderOption';
 import { useDispatch } from 'react-redux';
-import { auth } from './firebase';
-import { logout } from '../features/userSlice';
+import { auth } from '../firebase';
+import { logout } from '../../features/userSlice';
 import './Header.css';
 
 const Header = () => {
