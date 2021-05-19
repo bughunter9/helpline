@@ -4,10 +4,10 @@
     font-size: 20px;
     font-weight: 600;
     font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 10px;
   }
   
   .footer-div {
-    margin-top: 2rem;
-    padding-bottom: 1rem;
+    margin: 15px auto;
   }
   

@@ -41,12 +41,12 @@
     /*Mobile View */
     .header {
       padding: 0px 10px;
+      height: 80px;
     }
     .logo {
-      width: 200px;
-      height: 100px;
-      padding: 15px;
-      margin-top: 10px;
+      width: 140px;
+      height: 70px;
+      padding: 5px;
     }
     .nav-options {
       display: flex;
