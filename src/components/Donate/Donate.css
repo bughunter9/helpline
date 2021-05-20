@@ -1,0 +1,14 @@
+.donate__header {
+    margin: 10px;
+    padding: 20px;
+}
+
+.donate__header > h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+}
+
+.donate {
+    text-align: center;
+}

@@ -5,7 +5,6 @@ import { db } from '../firebase';
 import firebase from 'firebase';
 import Posts from './Posts';
 import FlipMove from 'react-flip-move';
-import { useForm } from 'react-hook-form';
 
 function Resources() {
 
@@ -13,10 +12,8 @@ function Resources() {
   const [inputLink,setInputLink] = useState('');
   const [inputResource,setInputResource] = useState('');
   const [inputCity,setInputCity] = useState('');
-//   const [inputState,setInputState] = useState('');
   const [inputCountry,setInputCountry] = useState('');
   const [posts,setPosts] = useState([]);
-  const { register , handleSubmit , formState: { errors }} = useForm(); 
 
   useEffect(() => {
       db.collection("posts")
@@ -38,7 +35,6 @@ function Resources() {
           name: inputName,
           resource: inputResource,
           city: inputCity,
-        //   state: inputState,
           country: inputCountry,
           resourceLink: inputLink,
           timestamp: firebase.firestore.FieldValue.serverTimestamp(),
@@ -46,7 +42,6 @@ function Resources() {
       setInputName("");
       setInputResource("");
       setInputCity("");
-    //   setInputState("");
       setInputCountry("");
       setInputResource("");
       setInputLink("");
@@ -85,11 +80,6 @@ function Resources() {
                             value={inputCity} onChange={e => setInputCity(e.target.value)} type="text" required>
                             City</mobiscroll.Input>
                         </div>
-                        {/* <div className="mbsc-col-12 mbsc-col-md-6 mbsc-col-lg-3">
-                            <mobiscroll.Input inputStyle="box" labelStyle="floating" placeholder="Select your state"
-                            value={inputState} onChange={e => setInputState(e.target.value)} type="text" required>
-                            State</mobiscroll.Input>
-                        </div> */}
                         <div className="mbsc-col-12 mbsc-col-md-6 mbsc-col-lg-3">
                             <mobiscroll.Input inputStyle="box" labelStyle="floating" placeholder="Select your country"
                             value={inputCountry} onChange={e => setInputCountry(e.target.value)} type="text" required>
