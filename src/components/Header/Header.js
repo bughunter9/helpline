@@ -10,7 +10,6 @@ import HeaderOption from './HeaderOption';
 import { useDispatch } from 'react-redux';
 import { auth } from '../firebase';
 import { logout } from '../../features/userSlice';
-import './Header.css';
 import { Link } from "react-router-dom";
 
 const Header = () => {
