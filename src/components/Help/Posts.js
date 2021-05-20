@@ -1,16 +1,16 @@
 import React, { forwardRef } from 'react';
 import './Posts.css';
 
-const Post = forwardRef(({name, resource, city, country, resourceLink}, ref) => {
+const Post = forwardRef(({name, resLink, amount, walletAddress}, ref) => {
   return (
     <div ref={ref} className='post'>
         <div className='post__info'>
             <h2>Posted By : <strong>{name}</strong></h2>
-            <h3>Resource : <strong>{resource}</strong></h3>
-            <h4>Place : <strong>{city}</strong> / <strong>{country}</strong></h4>
+            <h3>Amount : <strong>{amount}</strong></h3>
+            <h4>Wallet Address : <strong>{walletAddress}</strong></h4>
             
-            <h4>Resource : {" "}
-                <a target="_blank" rel="noreferrer" href={resourceLink}>
+            <h4>Proof : {" "}
+                <a target="_blank" rel="noreferrer" href={resLink}>
                     Link
                 </a>
             </h4>

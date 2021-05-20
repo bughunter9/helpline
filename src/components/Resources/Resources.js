@@ -13,7 +13,7 @@ function Resources() {
   const [inputLink,setInputLink] = useState('');
   const [inputResource,setInputResource] = useState('');
   const [inputCity,setInputCity] = useState('');
-  const [inputState,setInputState] = useState('');
+//   const [inputState,setInputState] = useState('');
   const [inputCountry,setInputCountry] = useState('');
   const [posts,setPosts] = useState([]);
   const { register , handleSubmit , formState: { errors }} = useForm(); 
@@ -38,7 +38,7 @@ function Resources() {
           name: inputName,
           resource: inputResource,
           city: inputCity,
-          state: inputState,
+        //   state: inputState,
           country: inputCountry,
           resourceLink: inputLink,
           timestamp: firebase.firestore.FieldValue.serverTimestamp(),
@@ -46,7 +46,7 @@ function Resources() {
       setInputName("");
       setInputResource("");
       setInputCity("");
-      setInputState("");
+    //   setInputState("");
       setInputCountry("");
       setInputResource("");
       setInputLink("");
@@ -63,7 +63,7 @@ function Resources() {
                         </div>
                     </div>
                     <div className="mbsc-row">
-                        <div className="mbsc-col-12 mbsc-col-md-6 mbsc-col-lg-3">
+                        <div className="mbsc-col-12 mbsc-col-lg-6">
                             <mobiscroll.Input inputStyle="box" labelStyle="floating" placeholder="Full Name"
                             value={inputName} onChange={e => setInputName(e.target.value)} type="text">
                             Full Name</mobiscroll.Input>
@@ -75,7 +75,7 @@ function Resources() {
                         </div>
                     </div>
                     <div className="mbsc-row">
-                        <div className="mbsc-col-12 mbsc-col-md-6 mbsc-col-lg-3">
+                        <div className="mbsc-col-12 mbsc-col-lg-6">
                             <mobiscroll.Input inputStyle="box" labelStyle="floating" placeholder="Resource Type"
                             value={inputResource} onChange={e => setInputResource(e.target.value)} type="text" required>
                             Resource Type</mobiscroll.Input>
@@ -85,11 +85,11 @@ function Resources() {
                             value={inputCity} onChange={e => setInputCity(e.target.value)} type="text" required>
                             City</mobiscroll.Input>
                         </div>
-                        <div className="mbsc-col-12 mbsc-col-md-6 mbsc-col-lg-3">
+                        {/* <div className="mbsc-col-12 mbsc-col-md-6 mbsc-col-lg-3">
                             <mobiscroll.Input inputStyle="box" labelStyle="floating" placeholder="Select your state"
                             value={inputState} onChange={e => setInputState(e.target.value)} type="text" required>
                             State</mobiscroll.Input>
-                        </div>
+                        </div> */}
                         <div className="mbsc-col-12 mbsc-col-md-6 mbsc-col-lg-3">
                             <mobiscroll.Input inputStyle="box" labelStyle="floating" placeholder="Select your country"
                             value={inputCountry} onChange={e => setInputCountry(e.target.value)} type="text" required>
@@ -108,13 +108,12 @@ function Resources() {
             </mobiscroll.Form>
       </div>
       <FlipMove>
-      {posts.map(({ id, data: {name, resource, city, state, country, resourceLink}}) => (
+      {posts.map(({ id, data: {name, resource, city, country, resourceLink}}) => (
             <Posts
                 key={id}
                 name={name}
                 resource={resource}
                 city={city}
-                state={state}
                 country={country}
                 resourceLink={resourceLink}
             />

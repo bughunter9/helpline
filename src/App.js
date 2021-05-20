@@ -7,6 +7,8 @@ import About from './components/About/About';
 import Resources from './components/Resources/Resources';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ScrollToTop from './container/ScrollToTop';
+import Donate from './components/Donate/Donate';
+import Help from './components/Help/Help';
 
 function App() {
   return (
@@ -15,6 +17,12 @@ function App() {
       <ScrollToTop />
       <Header />
       <Switch>
+        <Route path='/Help' component={Help}>
+          <Help />
+        </Route>
+        <Route path='/Donate' component={Donate}>
+          <Donate />
+        </Route>
         <Route path='/Resources' component={Resources}>
           <Resources />
         </Route>

@@ -42,11 +42,11 @@ const Header = () => {
               <HeaderOption Icon={DataUsageRoundedIcon} title='Resources' 
                 onClick={closeMobileMenu}/>
           </Link>
-          <Link to="/">
+          <Link to="/Donate">
               <HeaderOption Icon={AddAlertIcon} title='Donate' 
                 onClick={closeMobileMenu}/>
           </Link>
-          <Link to="/">
+          <Link to="/Help">
               <HeaderOption Icon={AssignmentReturnedIcon} title='Help' 
                 onClick={closeMobileMenu}/>
           </Link>
