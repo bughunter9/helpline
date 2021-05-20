@@ -7,13 +7,18 @@ import Posts from './Posts';
 import FlipMove from 'react-flip-move';
 import './Help.css';
 
-function Help() {
+function Help(props) {
 
     const [inputName,setInputName] = useState('');
     const [inputResLink,setInputResLink] = useState('');
     const [inputAmount,setInputAmount] = useState('');
     const [inputWalletAddress,setInputWalletAddress] = useState('');
     const [posts,setPosts] = useState([]);
+
+    const [web3, setWeb3] = useState(null);
+    const [account, setAccount] = useState("0x0");
+    const [contract, setContract] = useState(null);
+    const [value, setValue] = useState("0.01");
   
     useEffect(() => {
         db.collection("help")
@@ -27,6 +32,14 @@ function Help() {
         )
         ));
     }, []);
+
+    useEffect((props) => {
+        if (!web3) {
+          setWeb3(props.web3);
+          setAccount(props.account);
+          setContract(props.contract);
+        }
+      }, [web3, account, contract]);
   
     const sendPost = e => {
         e.preventDefault();
@@ -42,7 +55,19 @@ function Help() {
         setInputResLink("");
         setInputAmount("");
         setInputWalletAddress("");
+        requestMoney();
     };
+
+
+    const requestMoney = async () => {
+        const res = await contract.methods
+          .requestMoney( inputName, web3.utils.toWei(value), inputWalletAddress)
+          .send({
+            from: account,
+            gas: web3.utils.toHex("50000"),
+          });
+
+      };
 
 
   return (

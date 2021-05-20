@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Cards, CountryPicker, Chart } from '../components/base';
-import { fetchData } from '../container/api';
+import { Cards, CountryPicker, Chart } from '../base';
+import { fetchData } from '../../container/api';
 import styles from './Covid.module.css';
 import image from '../assets/image.png';
 

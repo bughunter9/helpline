@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
-import Covid from './Covid/Covid';
+import Covid from './container/Covid/Covid';
 import Footer from './components/Footer/Footer';
 import About from './components/About/About';
 import Resources from './components/Resources/Resources';

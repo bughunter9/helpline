@@ -7,7 +7,12 @@ import Posts from './Posts';
 import FlipMove from 'react-flip-move';
 import './Donate.css';
 
-function Donate() {
+function Donate(props) {
+
+    const [web3, setWeb3] = useState(null);
+    const [account, setAccount] = useState("0x0");
+    const [contract, setContract] = useState(null);
+    const [value, setValue] = useState("0.01");
 
     const [inputName,setInputName] = useState('');
     const [inputAmount,setInputAmount] = useState('');
@@ -25,6 +30,14 @@ function Donate() {
         )
         ));
     }, []);
+
+    useEffect(() => {
+        if (!web3) {
+          setWeb3(props.web3);
+          setAccount(props.account);
+          setContract(props.contract);
+        }
+      }, [web3, account, contract]);
   
     const sendPost = e => {
         e.preventDefault();
@@ -37,6 +50,28 @@ function Donate() {
         setInputName("");
         setInputAmount("");
     };
+
+    // const approve = async (e) => {
+    //     e.preventDefault();
+    //     const res = await contract.methods.approveRequest(1).send({
+    //       from: account,
+    //       gas: web3.utils.toHex("50000"),
+    //     });
+    //     console.log(res);
+    //     };
+
+    const exec = async (e) => {
+        e.preventDefault();
+        console.log("value", String(value), account);
+        //.send() for inserting data
+        //.call() for quering data
+        const res = await contract.methods.contribute().send({
+          from: account,
+          value: web3.utils.toWei(String(value)),
+          gas: web3.utils.toHex("50000"),
+        });
+    
+        };
 
 
   return (
@@ -67,8 +102,8 @@ function Donate() {
                     <div className="mbsc-row">
                         <div className="mbsc-col-12 mbsc-col-md-16 mbsc-col-lg-3">
                             <div className="mbsc-btn-group-block">
-                                <mobiscroll.Button onClick={sendPost} type="submit" color="success">
-                                Submit </mobiscroll.Button>
+                                <mobiscroll.Button onClick={sendPost} type="submit" color="success" 
+                                onClick={exec}> Donate </mobiscroll.Button>
                             </div>
                         </div>
                     </div>

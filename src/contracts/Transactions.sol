@@ -1,20 +1,11 @@
 pragma solidity ^0.5.0;
 
-contract Funding {
+contract Transactions {
     modifier owner()
     {
         require(msg.sender == manager);
         _;
         // only owner can operate on the smart contract
-    }
-
-    struct PatientDetails {
-        string patientName;
-        uint requiredMoney;
-        address recipientAddress;
-        bool complete;
-        uint approvalCount;
-        mapping(address => bool) approvals;
     }
 
     address public manager;
@@ -24,7 +15,17 @@ contract Funding {
     PatientDetails[] public requests;
     uint currentbalance = 0;
 
-    // COnstructor function to set minimum amount for donation
+    struct PatientDetails {
+        string patientName;
+        uint requiredMoney;
+        address recipientAddress;
+        bool complete;
+        uint approvalCount;
+        mapping(address => bool) approvals;
+    }
+   
+
+    // Constructor function to set minimum amount for donation
     constructor (uint minimum) public payable{
         manager = msg.sender;
         minimumContribution = minimum;
@@ -44,9 +45,9 @@ contract Funding {
     // "ex new goodies for people", how much is he asking for, and who is the recipient
     function requestMoney(string memory PatientName, uint256 value, address recipient) public  {
           PatientDetails storage newPatient = patient[++numPatients];
-          newPatient.PatientName = PatientName;
-          newPatient.RequiredMoney = value;
-          newPatient.recipient = recipient;
+          newPatient.patientName = PatientName;
+          newPatient.requiredMoney = value;
+          newPatient.recipientAddress = recipient;
           newPatient.complete = false;
           newPatient.approvalCount = 0;
           
@@ -77,7 +78,7 @@ contract Funding {
         
         require(request.approvalCount > (approversCount / 2));
         
-        request.recipient.call(request.RequiredMoney);
+        request.recipientAddress.call(abi.encode(request.requiredMoney));
         request.complete = true;
         
     }
