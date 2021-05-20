@@ -11,6 +11,7 @@ import { useDispatch } from 'react-redux';
 import { auth } from '../firebase';
 import { logout } from '../../features/userSlice';
 import './Header.css';
+import { Link } from "react-router-dom";
 
 const Header = () => {
 
@@ -26,21 +27,29 @@ const Header = () => {
   return (
     <div className="header">
         <div className="logo-container">
-          <a href="#">
+          <Link to="/">
             <img src="https://th.bing.com/th/id/OIP.v4acunrmbnRxRGgfH-l5aAEsCW?w=350&h=175&c=7&o=5&dpr=1.25&pid=1.7"
              className="logo" />
-          </a>
+          </Link>
         </div>
         <div className={click ? "nav-options active" : "nav-options"}>
           <div className="header__right">
+          <Link to="/Covid">
               <HeaderOption Icon={EqualizerOutlinedIcon} title='Statistics' 
                 onClick={closeMobileMenu}/>
+          </Link>
+          <Link to="/Resources">
               <HeaderOption Icon={DataUsageRoundedIcon} title='Resources' 
                 onClick={closeMobileMenu}/>
+          </Link>
+          <Link to="/">
               <HeaderOption Icon={AddAlertIcon} title='Donate' 
                 onClick={closeMobileMenu}/>
+          </Link>
+          <Link to="/">
               <HeaderOption Icon={AssignmentReturnedIcon} title='Help' 
                 onClick={closeMobileMenu}/>
+          </Link>
               <HeaderOption avatar={true} title='Me' 
                 onClick={logoutOfApp} onClick={closeMobileMenu}/>
           </div>
