@@ -13,12 +13,13 @@
  
  .post__info {
      padding: 20px;
+     background-color: whitesmoke;
      border-bottom: 1px solid lightgray;
      overflow: hidden;
      box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
      transition: transform 100ms ease-in;
      cursor: pointer;
-     height: 20vh;
+     height: 16vh !important;
      padding-left: 40px;
      width: 400px;
      max-width: 400px;
@@ -36,3 +37,12 @@
      padding-bottom: 5px;
  }
  
+ .approval__Button {
+    width: 350px;
+    height: 50px;
+    font-size: large;
+    color: #fff;
+    background-color: #0074b1;
+    border-radius: 5px;
+    margin-top: 9px;
+ }

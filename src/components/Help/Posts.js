@@ -5,8 +5,8 @@ const Post = forwardRef(({name, resLink, amount, walletAddress}, ref) => {
   return (
     <div ref={ref} className='post'>
         <div className='post__info'>
-            <h2>Posted By : <strong>{name}</strong></h2>
-            <h3>Amount : <strong>{amount}</strong></h3>
+            <h2>Requested By : <strong>{name}</strong></h2>
+            <h3>Amount : <strong>{amount}</strong> Eth</h3>
             <h4>Wallet Address : <strong>{walletAddress}</strong></h4>
             
             <h4>Proof : {" "}

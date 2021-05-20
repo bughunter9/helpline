@@ -84,7 +84,7 @@ function Help() {
                     </div>
                     <div className="mbsc-row">
                         <div className="mbsc-col-12 mbsc-col-md-16 mbsc-col-lg-3">
-                            <div className="mbsc-btn-group-block">
+                            <div className="mobibutton mbsc-btn-group-block">
                                 <mobiscroll.Button onClick={sendPost} type="submit" color="success">
                                 Submit Details</mobiscroll.Button>
                             </div>

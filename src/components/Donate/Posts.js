@@ -5,8 +5,10 @@ const Post = forwardRef(({name, amount }, ref) => {
   return (
     <div ref={ref} className='post'>
         <div className='post__info'>
-            <h2>Posted By : <strong>{name}</strong></h2>
-            <h3>Amount Donated: <strong>{amount}</strong></h3>
+            <h2>Donated By : <strong>{name}</strong></h2>
+            <h3>Amount Donated: <strong>{amount}</strong> Eth</h3>
+            <button type='submit' className="approval__Button" >
+                    Approve</button>
         </div>
     </div>
     );
