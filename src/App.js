@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
-import Covid from './container/Covid/Covid';
+import Covid from './components/Covid/Covid';
 import Footer from './components/Footer/Footer';
 import About from './components/About/About';
 import Resources from './components/Resources/Resources';
@@ -48,9 +48,9 @@ function App() {
         <Route path='/Help' component={Help}>
           <Help />
         </Route>
-        <Route path='/Donate' component={Donate}>
+        {/* <Route path='/Donate' component={Donate}>
           <Donate />
-        </Route>
+        </Route> */}
         <Route path='/Resources' component={Resources}>
           <Resources />
         </Route>

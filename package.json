@@ -11,6 +11,8 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.21.1",
+    "chai": "^4.3.4",
+    "chai-as-promised": "^7.1.1",
     "chart.js": "^3.2.1",
     "classnames": "^2.3.1",
     "firebase": "^8.6.1",
