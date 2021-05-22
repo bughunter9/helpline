@@ -14,9 +14,9 @@ const Post = forwardRef(({name, resLink, amount, walletAddress}, ref) => {
                     Link
                 </a>
             </h4>
-            <button type='submit' className="approval__Button">
+                <button type='submit' className="approval__Button">
                     Approve
-            </button>
+                </button>
         </div>
     </div>
     );

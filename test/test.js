@@ -67,7 +67,7 @@ contract('Marketplace', ([deployer, seller, buyer]) => {
       oldSellerBalance = new web3.utils.BN(oldSellerBalance)
 
       // SUCCESS: Buyer makes purchase
-      result = await marketplace.purchaseProduct(productCount, { from: buyer, value: web3.utils.toWei('1', 'Ether')})
+      result = await marketplace.donateProduct(productCount, { from: buyer, value: web3.utils.toWei('1', 'Ether')})
 
       // Check logs
       const event = result.logs[0].args
@@ -91,13 +91,13 @@ contract('Marketplace', ([deployer, seller, buyer]) => {
       assert.equal(newSellerBalance.toString(), exepectedBalance.toString())
 
       // FAILURE: Tries to buy a product that does not exist, i.e., product must have valid id
-      await marketplace.purchaseProduct(99, { from: buyer, value: web3.utils.toWei('1', 'Ether')}).should.be.rejected;      
+      await marketplace.donateProduct(99, { from: buyer, value: web3.utils.toWei('1', 'Ether')}).should.be.rejected;      
       // FAILURE: Buyer tries to buy without enough ether
-      await marketplace.purchaseProduct(productCount, { from: buyer, value: web3.utils.toWei('0.5', 'Ether') }).should.be.rejected;
+      await marketplace.donateProduct(productCount, { from: buyer, value: web3.utils.toWei('0.5', 'Ether') }).should.be.rejected;
       // FAILURE: Deployer tries to buy the product, i.e., product can't be purchased twice
-      await marketplace.purchaseProduct(productCount, { from: deployer, value: web3.utils.toWei('1', 'Ether') }).should.be.rejected;
+      await marketplace.donateProduct(productCount, { from: deployer, value: web3.utils.toWei('1', 'Ether') }).should.be.rejected;
       // FAILURE: Buyer tries to buy again, i.e., buyer can't be the seller
-      await marketplace.purchaseProduct(productCount, { from: buyer, value: web3.utils.toWei('1', 'Ether') }).should.be.rejected;
+      await marketplace.donateProduct(productCount, { from: buyer, value: web3.utils.toWei('1', 'Ether') }).should.be.rejected;
     })
 
   })

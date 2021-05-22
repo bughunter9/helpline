@@ -49,7 +49,7 @@ contract Marketplace {
         emit ProductCreated(productCount, _name, _price, msg.sender, _proof, false);
     }
 
-    function purchaseProduct(uint _id) public payable {
+    function donateProduct(uint _id) public payable {
         // Fetch the product
         Product memory _product = products[_id];
         // Fetch the owner
