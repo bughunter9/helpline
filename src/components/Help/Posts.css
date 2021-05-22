@@ -19,7 +19,7 @@
      box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
      transition: transform 100ms ease-in;
      cursor: pointer;
-     height: 30vh !important;
+     height: 26vh !important;
      padding-left: 40px;
      width: 400px;
      max-width: 400px;
@@ -41,9 +41,6 @@
      font-size: 20px;
      font-weight: 400;
      padding-bottom: 5px;
- }
- .post__info > h4 > strong {
-     font-size: 10px;
  }
  
  .post__info > a {

@@ -7,8 +7,11 @@ const Post = forwardRef(({name, resLink, amount, walletAddress}, ref) => {
         <div className='post__info'>
             <h2>Requested By : <strong>{name}</strong></h2>
             <h3>Amount : <strong>{amount}</strong> Eth</h3>
-            <h4>Wallet Address : <strong>{walletAddress}</strong></h4>
-            
+            <h4>Wallet Address : {" "}
+                <a target="_blank" rel="noreferrer" href={walletAddress}>
+                    Address
+                </a>
+            </h4>
             <h4>Proof : {" "}
                 <a target="_blank" rel="noreferrer" href={resLink}>
                     Link
