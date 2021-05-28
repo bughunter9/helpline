@@ -5,6 +5,7 @@ import { db } from '../firebase';
 import firebase from 'firebase';
 import Posts from './Posts';
 import FlipMove from 'react-flip-move';
+import { createProduct } from '../../contracts/Marketplace.sol';
 import './Help.css';
 
 function Help() {
@@ -53,7 +54,15 @@ function Help() {
           <h2>Feel Free To Request For Any Financial Support</h2>
       </div>
       <div className="help__form">
-      <mobiscroll.Form className="mbsc-form-grid" theme="ios"  themeVariant="light">
+      <mobiscroll.Form className="mbsc-form-grid" theme="ios"  themeVariant="light"
+                        onSubmit={(event) => {
+                            event.preventDefault()
+                            const name = {inputName}
+                            const resLink = {resLink}
+                            const price = window.web3.utils.toWei({inputAmount}.toString(), 'Ether')
+                            const walletAddress = {walletAddress}
+                            createProduct(name, resLink, price, walletAddress)
+                            }}>
                 <div className="mbsc-grid">
                     <div className="mbsc-row mbsc-justify-content-center">
                         <div className="mbsc-col-sm-9 mbsc-col-md-7 mbsc-col-xl-5 mbsc-align-center">
