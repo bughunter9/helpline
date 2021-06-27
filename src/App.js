@@ -7,14 +7,14 @@ import About from './components/About/About';
 import Resources from './components/Resources/Resources';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ScrollToTop from './container/ScrollToTop';
-import Donate from './components/Donate/Donate';
+//import Donate from './components/Donate/Donate';
 import Help from './components/Help/Help';
 import Login from './components/Login/Login';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, selectUser } from './features/userSlice';
 import { auth } from './components/firebase';
-import Marketplace from './abis/Marketplace.json';
-import Web3 from 'web3';
+// import Marketplace from './abis/Marketplace.json';
+// import Web3 from 'web3';
 
 
 function App() {
