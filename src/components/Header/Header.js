@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
 
   const dispatch = useDispatch();
-  const logoutOfApp = () => {
+  const signOut = () => {
     dispatch(logout())
     auth.signOut();
   }
@@ -50,7 +50,7 @@ const Header = () => {
                 onClick={closeMobileMenu}/>
           </Link>
               <HeaderOption avatar={true} title='Me' 
-                onClick={logoutOfApp} onClick={closeMobileMenu}/>
+                onClick={} onClick={closeMobileMenu}/>
           </div>
       </div>
       <div className="mobile-menu" onClick={handleClick}>

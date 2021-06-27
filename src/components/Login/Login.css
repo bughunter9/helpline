@@ -14,7 +14,7 @@
     margin-bottom: 28px;
 }
 
-.login > form {
+/* .login > form {
     display: flex;
     flex-direction: column;
 }
@@ -35,7 +35,7 @@
     color: #fff;
     background-color: #0074b1;
     border-radius: 5px;
-}
+} */
 
 .g__button {
     width: 365px;
@@ -45,13 +45,14 @@
     color: #fff;
     background-color: red;
     border-radius: 5px;
+    margin-bottom: 25px;
 }
 
-.login__register {
+/* .login__register {
     color: #0074b1;
     cursor: pointer;
 }
 
 .login > p {
     margin-top: 20px;
-}
+} */
