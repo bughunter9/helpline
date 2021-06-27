@@ -16,9 +16,10 @@ const Header = () => {
 
   const dispatch = useDispatch();
   const signOut = () => {
-    dispatch(logout())
-    auth.signOut();
-  }
+    auth.signOut().then(() => {
+      dispatch(logout())
+    })   
+  };
 
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
