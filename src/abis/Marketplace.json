@@ -6152,6 +6152,12 @@
       "links": {},
       "address": "0x34eFf60CcDbEaAfB41D60179fC4621bb008fa2df",
       "transactionHash": "0xe75e16acc5816bc0c07b6f0681396db0face1ebbd9d246b3803ef1a605e042da"
+    },
+    "4": {
+      "events": {},
+      "links": {},
+      "address": "0x6cca1d333c876c224f033299a6602c7f37f00224",
+      "transactionHash": "0x59b20c15292b00cba13158f4dab94c12376e2cea47e9ad141b66e6695f8044c4"
     }
   },
   "schemaVersion": "3.2.5",
