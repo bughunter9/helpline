@@ -5,7 +5,7 @@ import './Posts.css';
 const courtABI = require("../../abis/Marketplace.json").abi;
 const courtContractAddress = "0x1689dd47983565c98f382879a98c74c0cdc7b060"; //rinkeby
 
-const Post = forwardRef(({name, resLink, amount, walletAddress}, ref) => {
+const Post = forwardRef(({id, name, resLink, amount, walletAddress}, ref) => {
 
     const [contract, setContract] = useState(null);
     const [account, setAccount] = useState();
@@ -51,7 +51,8 @@ const Post = forwardRef(({name, resLink, amount, walletAddress}, ref) => {
                     Link
                 </a>
             </h4>
-                <button type='submit' className="approval__Button" onClick={donateProduct}>
+                <button type='submit' className="approval__Button" 
+                        onClick={() => donateProduct(id)}>
                     Approve
                 </button>
         </div>

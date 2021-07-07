@@ -51,7 +51,7 @@ function Help() {
         setInputResLink("");
         setInputAmount("");
         setInputWalletAddress("");
-        uploadProduct();
+        uploadProduct(inputName, inputResLink, inputAmount);
     };
 
       // Setup Contracts on App Load
