@@ -8,7 +8,7 @@ import FlipMove from 'react-flip-move';
 import './Help.css';
 import web3 from '../../web3';
 
-const courtABI = require("../../abis/Marketplace.json");
+const courtABI = require("../../abis/Marketplace.json").abi;
 const courtContractAddress = "0x1689dd47983565c98f382879a98c74c0cdc7b060"; //rinkeby portis wallet address
 
 
