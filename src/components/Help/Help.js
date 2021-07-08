@@ -51,7 +51,7 @@ function Help() {
         setInputResLink("");
         setInputAmount("");
         setInputWalletAddress("");
-        uploadProduct(inputName, inputResLink, inputAmount);
+        createProduct(inputName, inputAmount, inputResLink);
     };
 
       // Setup Contracts on App Load
@@ -67,13 +67,13 @@ function Help() {
             });
         }, []);
 
-        const uploadProduct = (
-            inputName,
-            inputResLink,
-            inputAmount
-          ) => {
+        const createProduct = (
+            inputName, 
+            inputAmount, 
+            inputResLink
+            ) => {
             contract.methods
-              .createProduct(inputName, inputResLink, inputAmount)
+              .createProduct(inputName, inputAmount, inputResLink)
               .send({
                 from: account,
               })
