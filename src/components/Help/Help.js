@@ -9,7 +9,7 @@ import './Help.css';
 import web3 from '../../web3';
 
 const courtABI = require("../../abis/Marketplace.json").abi;
-const courtContractAddress = "0x743f0F439193C2dD043DC225EecF5638E523646a"; //rinkeby portis wallet address
+const courtContractAddress = "0x24cbA9844D1F17A2293fcC140C17f159c2981596";
 
 
 function Help() {
@@ -51,7 +51,7 @@ function Help() {
         setInputResLink("");
         setInputAmount("");
         setInputWalletAddress("");
-        createProduct(inputName, inputAmount, inputResLink);
+        createProduct(inputName, inputAmount);
     };
 
       // Setup Contracts on App Load
@@ -69,11 +69,10 @@ function Help() {
 
         const createProduct = (
             inputName, 
-            inputAmount, 
-            inputResLink
+            inputAmount
             ) => {
             contract.methods
-              .createProduct(inputName, inputAmount, inputResLink)
+              .createProduct(inputName, inputAmount)
               .send({
                 from: account,
               })

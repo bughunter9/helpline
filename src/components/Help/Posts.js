@@ -3,7 +3,7 @@ import web3 from '../../web3';
 import './Posts.css';
 
 const courtABI = require("../../abis/Marketplace.json").abi;
-const courtContractAddress = "0x743f0F439193C2dD043DC225EecF5638E523646a"; //rinkeby
+const courtContractAddress = "0x24cbA9844D1F17A2293fcC140C17f159c2981596"; 
 
 const Post = forwardRef(({index, name, resLink, amount, walletAddress}, ref) => {
 
