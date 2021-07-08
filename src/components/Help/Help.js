@@ -9,7 +9,7 @@ import './Help.css';
 import web3 from '../../web3';
 
 const courtABI = require("../../abis/Marketplace.json").abi;
-const courtContractAddress = "0x1689dd47983565c98f382879a98c74c0cdc7b060"; //rinkeby portis wallet address
+const courtContractAddress = "0x743f0F439193C2dD043DC225EecF5638E523646a"; //rinkeby portis wallet address
 
 
 function Help() {
@@ -132,9 +132,10 @@ function Help() {
             </mobiscroll.Form>
             </div>
             <FlipMove>
-            {posts.map(({ id, data: {name, resLink, amount, walletAddress}}) => (
+            {posts.map(({ id, data: {name, resLink, amount, walletAddress}}, index) => (
             <Posts
                 key={id}
+                index={index}
                 name={name}
                 resLink={resLink}
                 amount={amount}

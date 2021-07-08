@@ -3,9 +3,9 @@ import web3 from '../../web3';
 import './Posts.css';
 
 const courtABI = require("../../abis/Marketplace.json").abi;
-const courtContractAddress = "0x1689dd47983565c98f382879a98c74c0cdc7b060"; //rinkeby
+const courtContractAddress = "0x743f0F439193C2dD043DC225EecF5638E523646a"; //rinkeby
 
-const Post = forwardRef(({id, name, resLink, amount, walletAddress}, ref) => {
+const Post = forwardRef(({index, name, resLink, amount, walletAddress}, ref) => {
 
     const [contract, setContract] = useState(null);
     const [account, setAccount] = useState();
@@ -24,10 +24,10 @@ const Post = forwardRef(({id, name, resLink, amount, walletAddress}, ref) => {
         }, []);
 
         const donateProduct = (
-            id
+            index
           ) => {
             contract.methods
-              .donateProduct(id)
+              .donateProduct(index)
               .send({
                 from: account,
               })
@@ -52,7 +52,7 @@ const Post = forwardRef(({id, name, resLink, amount, walletAddress}, ref) => {
                 </a>
             </h4>
                 <button type='submit' className="approval__Button" 
-                        onClick={() => donateProduct(id)}>
+                        onClick={() => donateProduct(index)}>
                     Approve
                 </button>
         </div>
