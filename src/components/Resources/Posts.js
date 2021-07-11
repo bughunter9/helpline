@@ -10,7 +10,7 @@ const Post = forwardRef(({name, resource, city, country, resourceLink}, ref) => 
             <h4>Place : <strong>{city}</strong> / <strong>{country}</strong></h4>
             
             <h4>Resource : {" "}
-                <a target="_blank" rel="noreferrer" href={resourceLink}>
+                <a target="_blank" rel="noopener noreferrer" href={resourceLink}>
                     Link
                 </a>
             </h4>

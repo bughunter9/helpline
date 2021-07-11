@@ -29,7 +29,18 @@ function About() {
                 <br />
                 In Order to make situations normal again, we need to keep our spirits 
                 high and fight this pandemic together.
+                <br />
+                <br />
+                <strong>
+                    Register yourself for Co-Win Vaccination Today and get Certified 
+                </strong>
             </p>
+            <button type="submit" className="link__button">
+                <a target="_blank" rel="noopener noreferrer"
+                    href="https://selfregistration.cowin.gov.in/">
+                    Co-Win Vaccination
+                </a>
+            </button>
         </div>
         <div className="about__below__images">
             <div className="about__below__images__1">

@@ -13,8 +13,6 @@ import Login from './components/Login/Login';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, selectUser } from './features/userSlice';
 import { auth } from './components/firebase';
-// import Marketplace from './abis/Marketplace.json';
-// import Web3 from 'web3';
 
 
 function App() {
@@ -41,14 +39,15 @@ function App() {
 
 
   return (
-    <div className="app">
     <Router>
+
+    {!user ? (
+      <Login />
+    ) : (
+      <div className="app">
       <ScrollToTop />
       <Header />
       <Switch>
-        <Route path='/Login' component={Login}>
-          <Login />
-        </Route>
         <Route path='/Help' component={Help}>
           <Help />
         </Route>
@@ -66,8 +65,9 @@ function App() {
         </Route>
       </Switch>
       <Footer />
-    </Router>
     </div>
+  )}
+  </Router>
   );
 }
 

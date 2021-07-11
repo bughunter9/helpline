@@ -33,6 +33,22 @@
       margin-right: 40px;
   }
 
+  .link__button{
+      width: 365px;
+      height: 50px;
+      margin-top: 20px;
+      font-size: large;
+      color: #fff;
+      background-color: brown;
+      border-radius: 5px;
+      margin-bottom: 25px;
+  }
+
+  .link__button > a {
+    text-decoration: none !important;
+    color: white;
+  }
+
   .about__below__images{
       display: flex;
       padding: 20px;

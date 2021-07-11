@@ -51,7 +51,7 @@ const Header = () => {
                 onClick={closeMobileMenu}/>
           </Link>
               <HeaderOption avatar={true} title='Me' 
-                onClick={closeMobileMenu}/>
+                onClick={signOut}/>
           </div>
       </div>
       <div className="mobile-menu" onClick={handleClick}>
